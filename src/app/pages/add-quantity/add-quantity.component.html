@@ -1,0 +1,42 @@
+<app-dashboard-navbar></app-dashboard-navbar>
+
+<div class="dashboard-layout">
+  <aside class="side-navbar">
+    <app-sidebar></app-sidebar>
+  </aside>
+<div class="quantity-container">
+  <h2>Add Quantity</h2>
+
+  <div class="form-group">
+    <select [(ngModel)]="selectedItemId">
+      <option value="">Select Item</option>
+      <option *ngFor="let item of items" [value]="item.id">{{ item.name }}</option>
+    </select>
+
+    <input type="number" placeholder="Enter Quantity" [(ngModel)]="addQuantityValue" />
+
+    <button (click)="addQuantity()">Add Quantity</button>
+  </div>
+
+  <!-- Quantity Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Item Name</th>
+        <th>Total Quantity</th>
+        <th>Availability</th>
+        <th>Sell Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.totalQuantity }}</td>
+        <td>{{ getAvailability(item) }}</td>
+        <td>{{ item.sellQuantity }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

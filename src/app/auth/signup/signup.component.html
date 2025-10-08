@@ -1,0 +1,23 @@
+<div class="auth-container">
+  <!-- Title -->
+  <h1 class="title">🛍️ Shopping Web</h1>
+  <p class="greeting">Welcome! Please create your account to get started.</p>
+
+  <!-- Signup Form -->
+  <form (ngSubmit)="signup()">
+    <label>Name</label>
+    <input type="text" [(ngModel)]="name" name="name" placeholder="Enter your name" required>
+
+    <label>Email</label>
+    <input type="email" [(ngModel)]="email" name="email" placeholder="Enter your email" required>
+
+    <label>Password</label>
+    <input type="password" [(ngModel)]="password" name="password" placeholder="Enter your password" required>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <p class="signup-text">
+    Already have an account? <a routerLink="/login">Login</a>
+  </p>
+</div>

@@ -1,0 +1,17 @@
+<div class="sidebar" [class.collapsed]="isCollapsed">
+  <button class="toggle-btn" (click)="toggleSidebar()">
+    {{ isCollapsed ? '=' : '=' }}
+  </button>
+
+  <ul>
+    <li><a routerLink="/add-category" routerLinkActive="active"> Add Category</a></li>
+    <li><a routerLink="/add-item" routerLinkActive="active">Add Item</a></li>
+    <li><a routerLink="/add-quantity" routerLinkActive="active">Add Quantity</a></li>
+    <li><a routerLink="/view-order" routerLinkActive="active">View Order</a></li>
+    <li><a routerLink="/view-payment" routerLinkActive="active">View Payment</a></li>
+    <li><a routerLink="/feedback" routerLinkActive="active">Feedback</a></li>
+    <li><a routerLink="/reports" routerLinkActive="active">Reports</a></li>
+    <li><a routerLink="/change-pass" routerLinkActive="active"> Change Password</a></li>
+  </ul>
+</div>
+

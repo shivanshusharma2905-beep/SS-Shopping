@@ -1,0 +1,44 @@
+<!-- Top Navbar -->
+<app-dashboard-navbar></app-dashboard-navbar>
+
+<!-- Dashboard Layout -->
+<div class="dashboard-layout">
+  <!-- Sidebar -->
+  <aside class="side-navbar">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dashboard-content">
+    <div class="category-container">
+      <h2>Add Category</h2>
+
+      <!-- Input and Add button -->
+      <div class="input-group">
+        <input type="text" placeholder="Enter category name" [(ngModel)]="newCategory" />
+        <button (click)="addCategory()">Add</button>
+      </div>
+
+      <!-- Category Table -->
+      <table>
+        <thead>
+          <tr>
+            <th>Sr. No.</th>
+            <th>Category Name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cat of categories; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ cat.name }}</td>
+            <td>
+              <button class="edit-btn" (click)="editCategory(cat)">Edit</button>
+              <button class="delete-btn" (click)="deleteCategory(cat.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>

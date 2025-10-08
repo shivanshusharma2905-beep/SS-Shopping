@@ -1,0 +1,154 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f6fa; 
+  color: #2c3e50;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #2c3e50, #34495e);
+  padding: 12px 40px;
+  color: #fff;
+  width: 100%;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-left .brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: #f1c40f;
+  text-decoration: none;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding: 6px 8px;
+}
+
+.navbar a:hover {
+  color: #f1c40f;
+  border-bottom: 2px solid #f1c40f;
+}
+
+.active {
+  font-weight: bold;
+  border-bottom: 2px solid #f1c40f;
+  color: #f1c40f !important;
+}
+
+
+.auth-container {
+  width: 350px;
+  max-width: 90%;
+  margin: 80px auto;
+  padding: 30px 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.auth-container h2 {
+  margin-bottom: 25px;
+  color: #2c3e50;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.auth-container label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  color: #34495e;
+  font-weight: 500;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #bdc3c7;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-container input:focus {
+  border-color: #f1c40f;
+  box-shadow: 0 0 6px rgba(241, 196, 15, 0.4);
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 12px;
+  background: #f1c40f;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.auth-container button:hover {
+  background: #d4ac0d;
+}
+
+.auth-container p {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.auth-container p a {
+  color: #f1c40f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-container p a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 12px 20px;
+  }
+
+  .auth-container {
+    margin: 40px 15px;
+    padding: 25px 20px;
+  }
+}

@@ -1,0 +1,74 @@
+<!-- Top Navbar -->
+<app-dashboard-navbar></app-dashboard-navbar>
+
+<!-- Dashboard Layout -->
+<div class="dashboard-layout">
+  <!-- Sidebar -->
+  <aside class="side-navbar">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dashboard-content">
+    <div class="item-container">
+      <h2>Add Item</h2>
+
+      <!-- Item Form -->
+      <div class="form-group">
+        <input type="text" placeholder="Item Name" [(ngModel)]="newItem.name" required />
+        <input type="text" placeholder="Description" [(ngModel)]="newItem.description" />
+        <input type="number" placeholder="Price" [(ngModel)]="newItem.price" required />
+        <input type="number" placeholder="Quantity" [(ngModel)]="newItem.quantity" required />
+        <input type="text" placeholder="Image 1 URL" [(ngModel)]="newItem.image1" />
+        <input type="text" placeholder="Image 2 URL" [(ngModel)]="newItem.image2" />
+
+        <select [(ngModel)]="newItem.size">
+          <option value="">Select Size</option>
+          <option *ngFor="let s of sizes" [value]="s">{{ s }}</option>
+        </select>
+
+        <select [(ngModel)]="newItem.category">
+          <option value="">Select Category</option>
+          <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+        </select>
+
+        <button (click)="addItem()">Add Item</button>
+      </div>
+
+      <!-- Items Table -->
+      <table>
+        <thead>
+          <tr>
+            <th>Sr. No.</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Image1</th>
+            <th>Image2</th>
+            <th>Size</th>
+            <th>Category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.image1 }}</td>
+            <td>{{ item.image2 }}</td>
+            <td>{{ item.size }}</td>
+            <td>{{ item.category }}</td>
+            <td>
+              <button class="edit-btn" (click)="editItem(item)">Edit</button>
+              <button class="delete-btn" (click)="deleteItem(item.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>

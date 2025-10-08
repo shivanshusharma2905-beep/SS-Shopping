@@ -1,0 +1,19 @@
+<app-dashboard-navbar></app-dashboard-navbar>
+
+<div class="dashboard-layout">
+  <aside class="side-navbar">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+<div class="feedback-container">
+  <h2>Feedback</h2>
+
+  <div class="form-group">
+    <input type="text" placeholder="Your Name" [(ngModel)]="name" />
+    <input type="email" placeholder="Your Email" [(ngModel)]="email" />
+    <textarea placeholder="Your Feedback" [(ngModel)]="message"></textarea>
+    <button (click)="submitFeedback()">Submit</button>
+  </div>
+
+  <p *ngIf="submitted" class="success-msg">Thank you for your feedback!</p>
+</div>

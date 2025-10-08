@@ -1,0 +1,16 @@
+<app-dashboard-navbar></app-dashboard-navbar>
+
+<div class="dashboard-layout">
+  <aside class="side-navbar">
+    <app-sidebar></app-sidebar>
+  </aside>
+<div class="change-pass-container">
+  <h2>Change Password</h2>
+
+  <div class="form-group">
+    <input type="password" placeholder="Enter Current Password" [(ngModel)]="currentPassword" />
+    <input type="password" placeholder="New Password" [(ngModel)]="newPassword" />
+    <input type="password" placeholder="Re-enter New Password" [(ngModel)]="reEnterPassword" />
+    <button (click)="submitChange()">Submit</button>
+  </div>
+</div>

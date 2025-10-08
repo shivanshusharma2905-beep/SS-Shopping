@@ -1,0 +1,46 @@
+<app-dashboard-navbar></app-dashboard-navbar>
+
+<div class="dashboard-layout">
+  <aside class="side-navbar">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+<div class="order-container">
+  <h2>View Orders</h2>
+
+  <div class="form-group">
+    <select [(ngModel)]="selectedUser">
+      <option value="">Select User</option>
+      <option *ngFor="let user of users" [value]="user">{{ user }}</option>
+    </select>
+
+    <select [(ngModel)]="selectedStatus">
+      <option value="">Select Status</option>
+      <option *ngFor="let status of orderStatus" [value]="status">{{ status }}</option>
+    </select>
+
+    <button (click)="viewOrders()">View Orders</button>
+  </div>
+
+  <!-- Orders Table -->
+  <table *ngIf="showTable">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Item Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders; index as i">
+        <td><img [src]="order.image" alt="{{order.itemName}}" width="50" /></td>
+        <td>{{ order.itemName }}</td>
+        <td>{{ order.quantity }}</td>
+        <td>{{ order.price }}</td>
+        <td>{{ getTotalPrice(order) }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

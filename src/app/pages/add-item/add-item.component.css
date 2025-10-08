@@ -1,0 +1,140 @@
+/* Flex layout for sidebar + content */
+.dashboard-layout {
+  display: flex;
+  height: calc(100vh - 60px); /* Adjust if navbar height changes */
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar styling */
+.side-navbar {
+  width: 250px;
+  background: linear-gradient(180deg, #34495e, #2c3e50);
+  color: #fff;
+  padding: 20px;
+  border-right: 1px solid #222;
+}
+
+.side-navbar a {
+  display: block;
+  color: #ecf0f1;
+  padding: 10px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.side-navbar a:hover {
+  background-color: #f1c40f;
+  color: #2c3e50;
+}
+
+/* Main content area */
+.dashboard-content {
+  flex: 1;
+  padding: 30px;
+  background-color: #f7f7f7;
+  overflow-y: auto;
+}
+
+/* Item container (card style) */
+.item-container {
+  width: 600px;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.item-container h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Form inputs & selects */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #bdc3c7;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #f1c40f;
+  box-shadow: 0 0 6px rgba(241, 196, 15, 0.4);
+}
+
+.form-group button {
+  padding: 10px 20px;
+  border: none;
+  background: #f1c40f;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-group button:hover {
+  background: #d4ac0d;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+table th {
+  background: #f1f1f1;
+}
+
+.edit-btn {
+  padding: 5px 10px;
+  margin-right: 5px;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.edit-btn:hover {
+  background: #2980b9;
+}
+
+.delete-btn {
+  padding: 5px 10px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}

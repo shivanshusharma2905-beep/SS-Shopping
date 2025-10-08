@@ -1,0 +1,45 @@
+<app-dashboard-navbar></app-dashboard-navbar>
+
+<div class="dashboard-layout">
+  <aside class="side-navbar">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+<div class="payment-container">
+  <h2>View Payments</h2>
+
+  <div class="form-group">
+    <select [(ngModel)]="selectedUser">
+      <option value="">Select User</option>
+      <option *ngFor="let user of users" [value]="user">{{ user }}</option>
+    </select>
+
+    <button (click)="viewPayments()">View Payments</button>
+  </div>
+
+  <!-- Payments Table -->
+  <table *ngIf="showTable">
+    <thead>
+      <tr>
+        <th>Payment Type</th>
+        <th>Bank Name</th>
+        <th>Branch Name</th>
+        <th>Card No</th>
+        <th>CVV</th>
+        <th>Amount</th>
+        <th>Payment Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let payment of payments; index as i">
+        <td>{{ payment.paymentType }}</td>
+        <td>{{ payment.bankName }}</td>
+        <td>{{ payment.branchName }}</td>
+        <td>{{ payment.cardNo }}</td>
+        <td>{{ payment.cvv }}</td>
+        <td>{{ payment.amount }}</td>
+        <td>{{ payment.paymentDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

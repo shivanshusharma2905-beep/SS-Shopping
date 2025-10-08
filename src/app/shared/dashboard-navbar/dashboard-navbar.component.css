@@ -1,0 +1,57 @@
+/* Overall dashboard navbar styling */
+.dash-navbar {
+  display: flex;
+  justify-content: space-between; /* left and right separation */
+  align-items: center;
+  background: linear-gradient(90deg, #2c3e50, #34495e);
+  padding: 12px 40px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Left side: brand and links */
+.dash-navbar .nav-left {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* space between brand and links */
+}
+
+.dash-navbar .nav-left .brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: #f1c40f;
+  text-decoration: none;
+}
+
+/* Right side: logout */
+.dash-navbar .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between links */
+}
+
+/* Normal link style */
+.dash-navbar a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding: 6px 8px;
+}
+
+/* Hover effect */
+.dash-navbar a:hover {
+  color: #f1c40f;
+  border-bottom: 2px solid #f1c40f;
+}
+
+/* Active route link */
+.dash-navbar a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #f1c40f;
+  color: #f1c40f !important;
+}

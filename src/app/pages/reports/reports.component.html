@@ -1,0 +1,43 @@
+<app-dashboard-navbar></app-dashboard-navbar>
+
+<div class="dashboard-layout">
+  <aside class="side-navbar">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+<div class="report-container">
+  <h2>Reports</h2>
+
+  <div class="form-group">
+    <select [(ngModel)]="selectedCategory">
+      <option value="">Select Category</option>
+      <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+    </select>
+
+    <button (click)="viewReport()">View</button>
+  </div>
+
+  <!-- Report Table -->
+  <table *ngIf="showTable">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Item Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Available</th>
+        <th>Sell Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items; index as i">
+        <td><img [src]="item.image" width="50" alt="{{ item.name }}" /></td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ getAvailable(item) }}</td>
+        <td>{{ item.sellQuantity }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
